@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini test</title>
+</head>
+<body>
+
+    <!-- Code HTML bài 3 -->
+    <h1>Tính tích hai số</h1>
+    <p>Nhập a: <label for="num1"><input type="text" id="num1"></label></p>
+    <p>Nhập b: <label for="num2"><input type="text" id="num2"></label></p>
+    <button onclick="Multi()">Tích</button>
+    <br>
+    <h1 id="Result"></h1>
+
+    <script>
+        /* Bài 1: Câu lệnh nào để hiển thị 1 hộp thoại. Nêu
+        cú pháp hiển thị tên bạn lên hộp thoại.
+        */
+        // Câu lệnh nào để hiển thị 1 hộp thoại:  alert()
+        let t = prompt("Nhập tên của bạn");
+        alert(t);
+
+        /* Bài 2: Câu lệnh nào để nhận 1 giá trị từ 1 hộp thoại.
+        Viết code nhận giá trị từ hộp thoại, hiển thị bình phương
+        của số đó ra hộp thoại.
+        */
+        // Câu lệnh nào để nhận 1 giá trị từ 1 hộp thoại: prompt()
+        let n = parseInt(prompt("Nhập vào một số"));
+        let nbp = Math.pow(n, 2);
+        alert('Bình phương của n = ' + nbp);
+
+        /* Bài 3: Viết các bước để code nhận a và b từ 2 ô input
+        và hiển thị S = a*b ra thẻ h1. (Viết rõ b1: …, b2: …, b3: …)
+        */
+        // B1: Tạo giao diện
+        // B2: Khởi tạo hàm Multi(), gắng action onclick="Multi()"
+        //      tại nút "Tích"
+        // B3: Khai báo 2 biến a và b là 2 số ợc nhập vào 2 ô input
+        //      từ bàn phím
+        // B4: Khai báo biến Result la kết quả của phép a * b
+        // B5: Gắn id cho thẻ <h1>, dùng câu lệnh
+        //      document.getElementById("id").innerHTML = Result để
+        //      hiển thị kết quả phép toán tại thẻ <h1> có id được
+        //      chỉ tới.
+        function Multi(){
+            let a = parseInt(document.getElementById('num1').value);
+            let b = parseInt(document.getElementById('num2').value);
+            let Result = a * b;
+
+            document.getElementById("Result").innerHTML = Result;
+        }
+
+    </script>
+</body>
+</html>

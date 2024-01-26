@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Bài 4.a</h1>
+    <p>Nhập a: <label for="num"><input type="text" id="num"></label></p>
+    <button onclick="Add()">Nhập</button>
+    <br>
+    <p id="Perimeter"></p>
+    <p id="Area"></p>
+
+    <h1>Bài 4.b,c</h1>
+    <p>Nhập a: <label for="num"><input type="text" id="numa"></label></p>
+    <p>Nhập b: <label for="num"><input type="text" id="numb"></label></p>
+    <button onclick="Pow()">Nhập</button>
+    <br>
+    <p id="Powa"></p>
+    <p id="Powb"></p>
+    <p id="Sum"></p>
+
+    <h1>Bài 4.e</h1>
+    <p>Nhập a: <label for="num"><input type="text" id="anum"></label></p>
+    <p>Nhập b: <label for="num"><input type="text" id="bnum"></label></p>
+    <p>Nhập c: <label for="num"><input type="text" id="cnum"></label></p>
+    <button onclick="Check()">Nhập</button>
+    <br>
+    <p id="Maybe"></p>
+
+
+    <script>
+        /* a.Nhập vào a, hiển thị ra chu vi và diện tích và
+            hình vuông độ dài cạnh a
+        */
+        function Add() {
+            let a = parseInt(document.getElementById('num').value);
+            let perimeter = a * 4;
+            let area = a * a;
+
+            document.getElementById("Perimeter").innerHTML = "Chu vi = " + perimeter;
+            document.getElementById("Area").innerHTML = "Diện tích = " + area;
+        }
+
+        /* b.Nhập vào a và b, tính a^2, a^b
+            c. Tính tổng các số từ a đến b
+        */
+        function Pow(){
+            let a = parseInt(document.getElementById('numa').value);
+            let b = parseInt(document.getElementById('numb').value);
+            let powa = a ** 2;
+            let powb = b ** 2;
+            let sum = ((b + a) * ((b - a) + 1)) / 2;
+            document.getElementById("Powa").innerHTML = "a^2 = " + powa;
+            document.getElementById("Powb").innerHTML = "b^2 = " + powb;
+            document.getElementById("Sum").innerHTML = "Tổng = " + sum;
+        }
+
+        /* e.Nhập vào a, b, c, kiểm tra xem a, b, c có phải là 3 cạnh của (ae chủ động tìm lại điều kiện lần lượt của các câu):
+                    i.	1 tam giác?
+                    ii.	1 tam giác cân?
+                    iii.	1 tam giác đều?
+                    iv.	1 tam giác vuông?
+        */
+
+        function Check(){
+            let a = parseInt(document.getElementById('anum').value);
+            let b = parseInt(document.getElementById('bnum').value);
+            let c = parseInt(document.getElementById('cnum').value);
+            if (a > 0 & b > 0 && c> 0) {
+                if (a + b >c && a + c > b && b + c > a) {
+                    alert("Đây là 3 cạnh của 1 tam giác");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
